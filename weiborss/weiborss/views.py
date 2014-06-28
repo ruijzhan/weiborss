@@ -6,7 +6,7 @@ from status import Status
 
 
 def qiudog(request):
-    statuses = Status.get_friends_statuses(5)
+    statuses = Status.get_friends_statuses(100)
     for status in statuses:
         for pic in status.pic_urls:
             pic.thumbnail_pic = pic.thumbnail_pic.replace('thumbnail','large')
