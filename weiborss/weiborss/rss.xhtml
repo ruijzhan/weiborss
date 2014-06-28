@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+<channel>
+<title>被解放的秋狗 - 新浪微博</title>
+<link>http://weibo.com/3091066003</link>
+
+<description><![CDATA[职业宠物 博客：www.qiudog.com]]></description>
+<lastBuildDate>{{ lastBuildDate }}</lastBuildDate>
+<language>zh-cn</language>
+<copyright>被解放的秋狗 www.qiudog.com</copyright>
+
+{% for status in statuses %}
+<item>
+<title><![CDATA[ {{ status.user.screen_name }}:{{ status.text }} ]]></title>
+<link>http://weibo.com/{{ status.user.id }}/</link>
+<pubDate>status.created_at</pubDate>
+<dc:creator>{{ status.user.screen_name }}</dc:creator>
+<guid isPermaLink="false">http://api.t.sina.com.cn/3091066003/statuses/3709903791234541</guid>
+<description><![CDATA[{{ status.text }},{{ status.retweeted_status.text }}<br />
+
+{% for pic in status.pic_urls %}
+<a href="{{ pic.thumbnail_pic }}" title="点击看原图" target="_blank">
+<img src="{{ pic.thumbnail_pic }}" border=0 />
+{% endfor %}
+
+{% for pic in status.retweeted_status.pic_urls %}
+<a href="{{ pic.thumbnail_pic }}" title="点击看原图" target="_blank">
+<img src="{{ pic.thumbnail_pic }}" border=0 />
+{% endfor %}
+
+</a> ]]>
+
+</description>
+<slash:comments>19</slash:comments>
+</item>
+{% endfor %}
+</channel>
+</rss>
