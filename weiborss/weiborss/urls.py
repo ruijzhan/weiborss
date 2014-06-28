@@ -6,7 +6,7 @@ from weiborss.views import *
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^qiudog/',qiudog),
+    url(r'^$',qiudog),
     # Examples:
     # url(r'^$', 'weiborss.views.home', name='home'),
     # url(r'^weiborss/', include('weiborss.foo.urls')),
