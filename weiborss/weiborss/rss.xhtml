@@ -11,12 +11,12 @@
 
 {% for status in statuses %}
 <item>
-<title><![CDATA[ {{ status.user.screen_name }}:{{ status.text }} ]]></title>
+<title><![CDATA[ @{{ status.user.screen_name }}:{{ status.text }}.转@{{ status.retweeted_status.user.screen_name }}:{{ status.retweeted_status.text }} ]]></title>
 <link>http://weibo.com/{{ status.user.id }}/</link>
 <pubDate>status.created_at</pubDate>
 <dc:creator>{{ status.user.screen_name }}</dc:creator>
 <guid isPermaLink="false">http://api.t.sina.com.cn/3091066003/statuses/3709903791234541</guid>
-<description><![CDATA[{{ status.text }},{{ status.retweeted_status.text }}<br />
+<description><![CDATA[{{ status.text }}:{{ status.retweeted_status.text }}<br />
 
 {% for pic in status.pic_urls %}
 <a href="{{ pic.thumbnail_pic }}" title="点击看原图" target="_blank">
